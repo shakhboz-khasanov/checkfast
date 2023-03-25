@@ -1,0 +1,15 @@
+{% extends "index.html" %} 
+{%block content %}
+
+<h2>Sign Page</h2>
+<div class="container">
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Register</button>
+    <br /><br />
+    <p class="text-center">
+      If you already have an account, <a href="/login">login</a> instead.
+    </p>
+  </form>
+</div>
+{% endblock content %}
