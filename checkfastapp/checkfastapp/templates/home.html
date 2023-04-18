@@ -1,10 +1,25 @@
-{% extends "index.html" %} {% block content %}
+{% extends "index.html" %} {% load static %} {% block content %}
 
-<h1>CheckFast vebsahifasiga xush kelibsiz!</h1>
-<p>Muallif <em>Shakhboz Khasanov</em>!</p>
-
-<p>The library has the following record count</p>
-{% lorem 3 p random %}
-
-
+<style>
+  .card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+  }
+</style>
+<div class="card p-3">
+  <h1 class="p-1">CheckFast vebsahifasiga xush kelibsiz!</h1>
+  <img src="{%static 'mvo.png' %}" class="card-img-top" alt="Photo 3" />
+  <blockquote class="blockquote mb-0 card-body">
+    <p>Muallif: <em>Shakhboz Khasanov</em> !</p>
+    <footer class="blockquote-footer">
+      <small class="text-muted">
+        Manzil: Shayhontohur tuman (Toshkent shahar)
+        <cite title="Source Title"
+          >2023</cite
+        >
+      </small>
+    </footer>
+  </blockquote>
+</div>
 {% endblock %}

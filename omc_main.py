@@ -5,7 +5,7 @@ import omc_utils as utlis
 
 ############################################
 webCamFeed = True
-pathImage = "4test.jpg"
+pathImage = "images/3test.jpg"
 cap = cv2.VideoCapture(0)
 
 cap.set(0,0)
@@ -30,8 +30,9 @@ while True:
     
     #Ready Image
     img = cv2.imread(pathImage)
-    img = cv2.resize(img, (widthImg, heightImg)) 
-    
+    try:
+        img = cv2.resize(img, (widthImg, heightImg)) 
+    except: break
     
     imgFinal = img.copy()
     imgBlank = np.zeros((heightImg,widthImg, 3), np.uint8) # CREATE A BLANK IMAGE FOR TESTING DEBUGGING IF REQUIRED

@@ -138,6 +138,6 @@ MEDIA_URL = '/uploads/'
 
 #LOGIN_REDIRECT_URL = 'dashboard'
 #LOGIN_URL = 'login'
-
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 AUTH_USER_MODEL = 'accounts.Account'

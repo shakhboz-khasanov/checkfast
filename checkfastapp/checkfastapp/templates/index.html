@@ -1,5 +1,15 @@
 {% load static %}
 {% load bootstrap_icons %}
+{# Load the tag library #}
+{% comment %} {% load bootstrap5 %} {% endcomment %}
+{% comment %} 
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %} {% endcomment %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,17 +27,20 @@
   </head>
 
   <style>
-        body {
-            background-color: #ccd5ae;
-            background-size: cover;
+        
+        .nav {
+            background-color: #8ecae6;
+            text-color: white;
         }
-        nav {
-            background-color: #e9edc9;
+        .navbar-nav {
+            color: white;
+            text-color: white;
         }
     </style>
 
-  <body>
-    <nav class="navbar navbar-expand-lg ">
+  <body style="background-image: url('{% static "bg.jpg"%}'); background-attachment: fixed;
+  background-size: cover;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">
           <img

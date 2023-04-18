@@ -1,14 +1,102 @@
-{% extends "index.html" %} {% block content %}
+{% extends "index.html" %} {% load static %} {% block content %}
 <div class="card text-center">
-  <div class="card-header">About Us</div>
+  <h2 class="text-bg-success">O'quv jarayoni</h2>
+  <div class="card-header"></div>
   <div class="card-body">
-    <h5 class="card-title">Our Story</h5>
-    <p class="card-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec diam non
-      nisi faucibus aliquet. Nullam id dolor elit.
-    </p>
-    <a href="#" class="btn btn-primary">Learn More</a>
+    <div class="container">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <img
+                src="{% static 'image1.png' %}"
+                alt="Image1"
+                class="card-img-top"
+              />
+              <h3>O'rganish</h3>
+            </div>
+            <div class="col-md-3">
+              <img
+                src="{% static 'image2.png' %}"
+                alt="Image2"
+                class="card-img-top"
+              />
+              <h3>Mashqlar</h3>
+            </div>
+            <div class="col-md-3">
+              <img
+                src="{% static 'image3.png' %}"
+                alt="Image3"
+                class="card-img-top"
+              />
+              <h3>Imtihon</h3>
+            </div>
+            <div class="col-md-3">
+              <img
+                src="{% static 'image4.png' %}"
+                alt="Image4"
+                class="card-img-top"
+              />
+              <h3>Takrorlash</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-text">
+        O'qish jarayonlarining klassik ketma-ketligi quyidagi boshqichlarga
+        bo'linadi.
+      </p>
+    </div>
   </div>
-  <div class="card-footer text-muted">© 2023 CheckFast Company</div>
 </div>
+<hr />
+
+<div class="card">
+  <h2 class="text-center text-bg-success">Loyihaning dolzarbli</h2>
+  <div class="card-header"></div>
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                src="{% static 'teacher.png' %}"
+                alt="Image1"
+                class="card-img-top"
+              />
+              <h3 class='text-center'>Tekshirish jarayoni</h3>
+            </div>
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  30 second Har bir To'g'ri-Notog'ri savollar uchun
+                </li>
+                <li class="list-group-item">
+                  60 second Har bir ochiq test savollari uchun
+                </li>
+                <li class="list-group-item">
+                  120 second Har bir yopiq test savollari
+                </li>
+                <li class="list-group-item">10-15 minute Insholar</li>
+                <li class="list-group-item">
+                  5-10 minute uyga vazifani ko'rib chiqish
+                </li>
+              </ul>
+              <hr/>
+              <h4 class="text-danger">
+                ~ 170 soat yiliga faqat vazifalar takshirish uchun sarflanadi >
+                1hafta
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">© 2023 CheckFast Company</div>
+  </div>
+</div>
+<hr />
+
+<hr />
 {% endblock %}

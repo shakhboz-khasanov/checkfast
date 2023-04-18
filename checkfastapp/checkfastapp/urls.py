@@ -24,11 +24,11 @@ urlpatterns = [
     path("", home, name="home"),  
     path("pricing/", pricing, name="pricing"),
     path("about_us/", about_us, name="about_us"),
-     path("demo/", demo, name="demo"),
+    path("demo/", demo, name="demo"),
     path("login/", login, name="login"),  
     #path("dashboard", views.dashboard, name="dashboard"),  
     path("register/", RegisterView.as_view(), name="register"),
-    # path('dashboard/', include('accounts.urls')),
+    path('dashboard/', include('accounts.urls'),name='dashboard'),
     # path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),  
 
 ]

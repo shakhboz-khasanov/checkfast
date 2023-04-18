@@ -1,6 +1,6 @@
-# from django.urls import path,include
-# from . import views
+from django.urls import path,include
+from . import views
 
-# urlpatterns = [
-#     path('register', views.RegisterView.as_view(), 'register'),
-# ]
+urlpatterns = [
+    path('', views.dashboard, name='dashboard'),
+]

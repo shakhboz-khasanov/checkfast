@@ -1,70 +1,114 @@
-{% load static %}
-
-<html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
-
-    <!-- Optional theme -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-      crossorigin="anonymous"
-    />
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"
-    ></script>
-    <link href="{% static 'login/style.css' %}" rel="stylesheet" />
-    <link
-      href="{% static 'https://fonts.googleapis.com/css?family=Ubuntu' %}"
-      rel="stylesheet"
-    />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link
-      href="{% static 'path/to/font-awesome/css/font-awesome.min.css' %}"
-      rel="stylesheet"
-    />
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <div class="main">
-      <p align="center" class="sign">Welcome {{user}}</p>
-      <center>
-
-        <form class="form1">
-          <a href="create-quiz"
-            ><button
-              type="button"
-              class="btn btn-rounded btn-primary"
-              style="background-color: purple !important"
-            >
-              CREATE QUIZ
-            </button></a
-          >
-          <br />
-        </form>
-        
-        <form class="form1">
-          <a href="login"
-            ><button
-              type="button"
-              class="btn btn-rounded btn-primary"
-              style="background-color: purple !important"
-            >
-              LOGOUT
-            </button></a
-          >
-        </form>
-      </center>
+{% extends 'index.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="list-group list-group-numbered">
+        <h4>Mavjud xizmatlar</h4>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Test blanka yaratish</div>
+          </div>
+          <span class="badge bg-primary rounded-pill">1</span>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Testlarni tekshirish</div>
+          </div>
+          <span class="badge bg-primary rounded-pill">14</span>
+        </li>
+        <li
+          class="list-group-item d-flex justify-content-between align-items-start"
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">Statistikalarni ko'rish</div>
+          </div>
+          <span class="badge bg-primary rounded-pill">14</span>
+        </li>
+      </ul>
     </div>
-  </body>
-</html>
+
+    <div class="card text-bg-gradient col-md-8">
+      <h4 class="text-center">Test Blanka yaratish</h4>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label for="test-title" class="form-label">Test nomi</label>
+              <input
+                type="text"
+                name="test_title"
+                class="form-control"
+                id="test-title"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="test-description" class="form-label"
+                >Qo'shimcha ma'lumotlar</label
+              >
+              <textarea
+                name="test_description"
+                class="form-control"
+                id="test-description"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="test-date" class="form-label">Date</label>
+              <input
+                type="date"
+                name="test_date"
+                class="form-control"
+                id="test-date"
+                required
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="question-count" class="form-label"
+                >Savollar soni</label
+              >
+              <input
+                type="number"
+                name="question_count"
+                class="form-control"
+                id="question-count"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="choices-number" class="form-label"
+                >Tanlovlar soni</label
+              >
+              <select
+                name="choices_number"
+                class="form-select"
+                id="choices-number"
+              >
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="paper-format" class="form-label">Format</label>
+              <select name="paper_format" class="form-select" id="paper-format">
+                <option value="A4">A4</option>
+                <option value="Letter">Letter</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Test yaratish</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
